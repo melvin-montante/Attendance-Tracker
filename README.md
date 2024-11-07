@@ -18,13 +18,13 @@ Fourth Column - categorical as: 0 - "CHECKIN", 1 - "CHECKOUT", 2 - "BREAKOUT", 3
 
 **Input 2:** The raw data "raw.csv" is created and transformed from "biometric_punch.dat", converting .dat file into .csv file. Note that when the downloaded raw data from scanner is updated, please rename and convert the file to "raw.csv" so the code will not return an error.
 
-**Input 3:** The raw data "user_id.csv" contains the employees name and ID numbers that is merged with "laguna_info.csv". If employee count is updated, download and rename file to "user_id.csv" so the code will not return an error.
+**Input 3:** The raw data "user_id.csv" contains the employees name and ID numbers that is merged with "raw_converted.csv". If employee count is updated, download and rename file to "user_id.csv" so the code will not return an error.
 
 
 **OUTPUTS:**
 
 
-**Output 1:** The output file "raw_converted" is the converted data of Input 2.
+**Output 1:** The output file "raw_converted.csv" is the converted data of Input 2.
 
 The columns of Input 2 are transformed to a usable format.
 

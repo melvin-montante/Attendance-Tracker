@@ -16,9 +16,9 @@ Second Column - this contains the date and time of punch of the employees
 
 Fourth Column - categorical as: 0 - "CHECKIN", 1 - "CHECKOUT", 2 - "BREAKOUT", 3 - "BREAKIN", 4, and 5 - "UNKNOWN"
 
-**Input 2:** The raw data "raw.csv" is created and transformed from "biometric_punch.dat", converting .dat file into .csv file.
+**Input 2:** The raw data "raw.csv" is created and transformed from "biometric_punch.dat", converting .dat file into .csv file. Note that when the downloaded raw data from scanner is updated, please rename and convert the file to "raw.csv" so the code will not return an error.
 
-**Input 3:** The raw data "user_id.csv" contains the employees name and ID numbers that is merged with "laguna_info.csv".
+**Input 3:** The raw data "user_id.csv" contains the employees name and ID numbers that is merged with "laguna_info.csv". If employee count is updated, download and rename file to "user_id.csv" so the code will not return an error.
 
 
 **OUTPUTS:**
@@ -31,4 +31,8 @@ The columns of Input 2 are transformed to a usable format.
 Output 1 "raw_converted" will be an input data that can be shaped and finally exported to the final output (Output 2)
 
 
-**Output 2:** The output of this project "output_grouped.xlsx" is an excel file containing separate sheets for each employee. This file can be used by employees and employers to analyze attendance record at work.
+**Output 2:** The output of this project "output_grouped.xlsx" is an excel file containing separate sheets for each employee.
+This file can be used by employees and employers to analyze attendance record at work.
+
+
+The output file can be modified by replacing the desired dates of attendace in the code. See line 46 . The current code filters date from October onwards.

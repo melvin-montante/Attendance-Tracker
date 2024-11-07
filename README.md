@@ -35,4 +35,4 @@ Output 1 "raw_converted" will be an input data that can be shaped and finally ex
 This file can be used by employees and employers to analyze attendance record at work.
 
 
-The output file can be modified by replacing the desired dates of attendace in the code. See line 46 . The current code filters date from October onwards.
+The output file can be modified by replacing the desired dates of attendace in the code. See line 49 . The current code filters date from October onwards.

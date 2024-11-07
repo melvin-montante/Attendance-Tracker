@@ -18,6 +18,9 @@ raw.to_csv('raw_converted.csv',index=False)
 biometrics = pd.read_csv('raw_converted.csv')
 user = pd.read_csv('user_id.csv')
 
+#Dropping duplicate rows
+biometrics = biometrics.drop_duplicates()
+
 #Capturing time in HH:MM format only
 biometrics['time'] = pd.to_datetime(biometrics['time'], format='%H:%M:%S', errors='coerce').dt.strftime('%H:%M')
 biometrics.head()

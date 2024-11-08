@@ -39,13 +39,13 @@ result = grouped.apply(lambda row: pd.Series({
 
 result.head()
 
-#Filtering results to capture biometrics record in October and November
+#Filtering results to capture biometrics record in October onwards
 result['date'] = pd.to_datetime(result['date'])
-result_10_11 = result[(result['date'].dt.month >= 10)] # Modify this row to capture desired date
-result_10_11.head()
+result_filtered = result[(result['date'].dt.month >= 10)] # Modify this row to capture desired date
+result_filtered.head()
 
 #Joining user_id to biometrics record to identify names that correspond to id
-merged_data = pd.merge(user,result_10_11, on='id', how='left')
+merged_data = pd.merge(user,result_filtered, on='id', how='left')
 merged_data.head()
 
 #Exporting as excel file in different sheets per employee name
@@ -74,10 +74,10 @@ bio = biometrics[biometrics['date'].dt.month >=8]
 
 # Filter data for late employees
 filtered_biometrics = bio[
-    (bio['type'] == 0) &
+    (bio['type'] == 0) & #Check-in type
     (bio['date'].dt.month >= 8) & # Modify this line to the desired date and timeframe
-    ((bio['time'] >= pd.to_datetime("06:01").time()) & (bio['time'] <= pd.to_datetime("10:00").time()) |
-     (bio['time'] >= pd.to_datetime("18:01").time()) & (bio['time'] <= pd.to_datetime("22:00").time()))
+    ((bio['time'] >= pd.to_datetime("06:01").time()) & (bio['time'] <= pd.to_datetime("10:00").time()) |      # Day Shift records
+     (bio['time'] >= pd.to_datetime("18:01").time()) & (bio['time'] <= pd.to_datetime("22:00").time()))       # Night shift records
 ]
 
 # Group by id, count number of late and show times and dates of late
